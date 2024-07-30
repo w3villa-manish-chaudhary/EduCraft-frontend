@@ -1,0 +1,30 @@
+.custom-class-navtext {
+    color: white !important;
+    font-size: 1.1rem !important;
+
+    
+  }
+  .logo{
+    height: 30px;
+    width: 30px; 
+  }
+  .Logoname{
+    font-size: 24px !important;
+    font-weight: 550 !important;
+    text-decoration: none;
+  }
+  .custom-class-navbgcolor {
+    background-color: #6aa7e4;
+    background: #4C6BFA !important;
+    
+  }
+  
+  .custom-class-navbgcolor .navbar-nav .nav-link {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .custom-class-navbgcolor .navbar-nav .nav-link:hover {
+    background-color: #3a87fa8c; 
+  }
+ 

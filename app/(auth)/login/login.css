@@ -1,0 +1,135 @@
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 10px;
+}
+
+
+.login-image {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+.login-form { 
+  height: 500px;
+  flex: 1;
+  width: 100%; 
+  padding: 10px; 
+  background: white;
+}
+
+.login-form > h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+.login-form > h3 > .description > p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 5px;
+}
+
+.login-form > .form {
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-form > .form > .inputs {
+  border: 1px solid transparent;
+  border-right: var(--gray);
+}
+
+.login-form > .form > .inputs >.form-group {
+  padding-bottom: 10px;
+}
+
+.custom-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-btns > .submit-btn {
+  width: 300px;
+}
+
+.heading {
+  color: #4C6BFA;
+}
+
+
+.or-divider {
+  display: flex;
+  align-items: center;
+}
+
+.or-divider .line {
+  flex-grow: 1;
+  border: 0;
+  height: 1px;
+  background: #ccc;
+}
+
+.or-divider .or-text {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 5px;
+}
+
+.forgot-password {
+  color: #007bff;
+  text-decoration: none;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+
+.button-parents{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-button{
+  border: 0.5px solid rgba(165, 161, 161, 0.11);
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 980px) {
+  .login-img{
+    display: none;
+  }
+  
+}
