@@ -20,3 +20,15 @@
     border-color: #007bff;
   }
   
+  .verify-button {
+    width: 100%; 
+    max-width: 270px; 
+    height: 40px;
+    font-size: 1.1rem; 
+    padding: 0; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

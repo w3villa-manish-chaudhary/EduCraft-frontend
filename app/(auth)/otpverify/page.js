@@ -7,13 +7,12 @@ import './otp.css';
 
 const OtpVerifyPage = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
-  const [phone, setPhone] = useState(''); // Initialize phone state
+  const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
   const router = useRouter();
 
   useEffect(() => {
-    // Check if router.query and phone are defined
     const queryParams = new URLSearchParams(window.location.search);
     const phone = queryParams.get('phone');
     
@@ -29,7 +28,6 @@ const OtpVerifyPage = () => {
     newOtp[index] = value;
     setOtp(newOtp);
 
-    // Move focus to the next input box
     if (value && index < otp.length - 1) {
       inputRefs[index + 1].current.focus();
     }
@@ -91,7 +89,7 @@ const OtpVerifyPage = () => {
               </div>
             </Form.Group>
             {error && <p className="text-danger">{error}</p>}
-            <Button variant="primary" type="submit" className="w-100">
+            <Button variant="primary" type="submit" className="verify-button w-100">
               Verify OTP
             </Button>
           </Form>
