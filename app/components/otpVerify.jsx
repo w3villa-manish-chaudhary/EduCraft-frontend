@@ -1,26 +1,20 @@
 'use client';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import './otp.css';
+import './Style/otp.css';
+import { toast } from 'react-toastify';
+import EmailVerify from './emailVerify'; 
 
-const OtpVerifyPage = () => {
+const OtpVerifyPage = ({ phone: initialPhone }) => {
   const [otp, setOtp] = useState(['', '', '', '']);
-  const [phone, setPhone] = useState('');
+  const [phone, setPhone] = useState(initialPhone || '');
   const [error, setError] = useState('');
   const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
   const router = useRouter();
-
-  useEffect(() => {
-    const queryParams = new URLSearchParams(window.location.search);
-    const phone = queryParams.get('phone');
-    
-    if (phone) {
-      setPhone(phone);
-      console.log('Phone number from query:', phone);
-    }
-  }, []);
+  const [showEmailVerify, setShowEmailVerify] = useState(false);
+ 
 
   const handleChange = (e, index) => {
     const value = e.target.value.replace(/\D/g, '');
@@ -50,7 +44,8 @@ const OtpVerifyPage = () => {
 
       if (response.status === 200) {
         console.log('OTP verified successfully');
-        router.push('/home');
+        toast.success('OTP verified successfully. Please check your email for verification link.');
+        setShowEmailVerify(true);
       } else {
         setError('OTP verification failed.');
       }
@@ -66,12 +61,16 @@ const OtpVerifyPage = () => {
     }
   };
 
+  if (showEmailVerify) {
+    return <EmailVerify />;
+  }
+
   return (
     <Container>
       <Row className="justify-content-md-center">
         <Col md={6}>
           <h2 className="text-center mb-4">OTP Verification</h2>
-          <p className="text-center text-muted mb-4">Enter the OTP sent to your mobile.</p>
+          <p className="text-center text-muted mb-4">Enter the OTP sent to your mobile: {phone}</p>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3 text-center">
               <div className="otp-container">

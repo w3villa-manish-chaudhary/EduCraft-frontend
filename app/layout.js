@@ -15,7 +15,6 @@ export default function RootLayout({ children }) {
         <CustomNavbar/>
         {children}
         <ToastContainer
-        position="top-center"
         autoClose={3000}
         hideProgressBar
         newestOnTop
