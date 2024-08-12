@@ -1,4 +1,5 @@
 'use client'
+require('dotenv').config();
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { toast, ToastContainer } from 'react-toastify';
@@ -21,7 +22,7 @@ const OtpVerifyPage = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/auth/oauthotpsend', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/oauthotpsend`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

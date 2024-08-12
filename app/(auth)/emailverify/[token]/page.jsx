@@ -1,7 +1,9 @@
 'use client';
+require('dotenv').config();
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
+
 
 const EmailVerify = ({ params }) => {
   const { token } = params;
@@ -11,7 +13,7 @@ const EmailVerify = ({ params }) => {
   useEffect(() => {
     const verifyEmail = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/emailverify`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/emailverify`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

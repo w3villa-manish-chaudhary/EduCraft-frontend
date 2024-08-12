@@ -1,5 +1,5 @@
 'use client'
-
+require('dotenv').config();
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -16,11 +16,13 @@ const Login = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
+  console.log(">>>>>>>>>>>>>>>>", `${process.env.NEXT_PUBLIC_BACKEND_URL}/signin` ); 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('http://localhost:8000/signin', {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/signin`, {
         email,
         password
       });
@@ -38,8 +40,9 @@ const Login = () => {
   };
 
   const googleClick = () => {
-    window.location.href = 'http://localhost:8000/auth/google';
-  }
+    const redirectUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/google`;
+    window.location.href = redirectUrl;
+  };
 
   return (
     <div className="login-container mt-5">

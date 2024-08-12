@@ -1,4 +1,5 @@
 "use client";
+require('dotenv').config();
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './signup.css';
@@ -48,7 +49,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/signup', formData, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/signup`, formData, {
         headers: {
           'Content-Type': 'application/json',
         }

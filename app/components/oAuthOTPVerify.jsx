@@ -1,4 +1,5 @@
 'use client';
+require('dotenv').config();
 import React, { useState, useRef } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
@@ -36,7 +37,7 @@ const OauthOtpVerifyPage = ({ phoneNumber: initialPhone }) => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/otpverify', { phone, otp: otpString });
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/otpverify`, { phone, otp: otpString });
 
       if (response.status === 200) {
         toast.success('OTP verified successfully.');
