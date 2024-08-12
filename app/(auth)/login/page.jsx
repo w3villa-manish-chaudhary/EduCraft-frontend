@@ -37,6 +37,10 @@ const Login = () => {
     }
   };
 
+  const googleClick = () => {
+    window.location.href = 'http://localhost:8000/auth/google';
+  }
+
   return (
     <div className="login-container mt-5">
       <div className="login-img" style={{ height: "500px", flex: 1 }}>
@@ -105,7 +109,7 @@ const Login = () => {
               </div>
 
               <div className='button-parents'>
-                <button type="button" className="custom-button">
+                <button type="button" className="custom-button" onClick={googleClick}>
                   <FaGoogle className="mr-2" /> Login with Google
                 </button>
 
