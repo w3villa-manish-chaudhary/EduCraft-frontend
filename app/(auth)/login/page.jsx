@@ -44,6 +44,12 @@ const Login = () => {
     window.location.href = redirectUrl;
   };
 
+
+  const githubClick = () => {
+    const redirectUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/github`;
+    window.location.href = redirectUrl;
+  };
+
   return (
     <div className="login-container mt-5">
       <div className="login-img" style={{ height: "500px", flex: 1 }}>
@@ -116,7 +122,7 @@ const Login = () => {
                   <FaGoogle className="mr-2" /> Login with Google
                 </button>
 
-                <button type="button" className="custom-button">
+                <button type="button" className="custom-button" onClick={githubClick}>
                   <FaGithub className="mr-2" /> Login with GitHub
                 </button>
               </div>
