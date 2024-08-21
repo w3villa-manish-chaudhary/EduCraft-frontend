@@ -1,0 +1,89 @@
+
+  .main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #494747;
+    
+
+  }
+  
+  .heading {
+    color: #494747;
+    font-weight: 400;
+    margin-top: 75px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .features h5 {
+    color: #494747;
+        font-weight: 400;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .features h5 i {
+    margin-right: 10px;
+    font-size: 1.2em;
+  }
+  
+  .features-section {
+    padding: 2rem;
+    color: #494747;
+    
+    border-radius: 10px;
+    width: 75%;
+    margin: auto;
+}
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .feature-title {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .feature-description {
+    font-size: 1rem;
+    color: #494747;
+    
+  }
+  
+  .premium-badge {
+    background: #00c7b7;
+    color: rgb(0, 0, 0);
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+  
