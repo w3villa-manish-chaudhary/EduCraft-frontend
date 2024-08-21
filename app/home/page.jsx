@@ -5,7 +5,7 @@ import Testimonials from '../components/Testimonials'
 
 const HomePage = () => (
   <div className='main-container'>
-    <h1 className='heading fw-bold'>Level up your learning. Level up your career.</h1>
+    <div className='mainheading' ><h1 className=' subheading fw-bold'>Level up your learning. Level up your career.</h1></div>
     <div className='features'>
       <h5><i className="fa-brands fa-readme"></i> 100+ Courses & Projects</h5>
       <h5><i className="fa-solid fa-users"></i> 100+ Learners</h5>
@@ -13,7 +13,7 @@ const HomePage = () => (
     </div>
     <PricingSection />
     <section className="features-section">
-      <h2 className="text-gray fw-bold">Why Educative?</h2>
+      <h2 className="text-gray fw-bold">Why EduCraft?</h2>
       <hr />
       <div className="features-grid">
         <div className="feature-card">

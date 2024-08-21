@@ -16,7 +16,6 @@ const PricingSection = () => (
           'Easy access to new courses',
           'AI-Powered Features'
         ]}
-        isPopular
         discount={59}
       />
       <PricingCard
@@ -32,7 +31,6 @@ const PricingSection = () => (
           'Easy access to new courses',
           'AI-Powered Features'
         ]}
-        isPopular
         discount={58}
       />
       <PricingCard
