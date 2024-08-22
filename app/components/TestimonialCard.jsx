@@ -4,7 +4,7 @@ const TestimonialCard = ({ quote, name, title}) => {
   return (
     <div className="card shadow-sm border-0">
       <div className="card-body shadow-lg ">
-        <blockquote className="blockquote mb-0">
+        <blockquote className="mb-0">
           <p className="mb-3">
             <i className="fas fa-quote-left text-primary"></i> {quote}
           </p>
