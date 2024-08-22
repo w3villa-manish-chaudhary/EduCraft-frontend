@@ -16,7 +16,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  console.log(">>>>>>>>>>>>>>>>", `${process.env.NEXT_PUBLIC_BACKEND_URL}/signin` ); 
+  // console.log(">>>>>>>>>>>>>>>>", `${process.env.NEXT_PUBLIC_BACKEND_URL}/signin` ); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
