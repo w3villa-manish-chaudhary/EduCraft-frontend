@@ -48,4 +48,10 @@
   button:hover {
     background-color: #0056b3;
   }
+
+  .courseheading{
+    display: flex;
+    justify-content: center;
+    color: var(--gray);
+  }
   

@@ -46,7 +46,10 @@ const AddCourseForm = () => {
   };
 
   return (
+
+
   <div className="form-container mt-5">
+    <h2 className='courseheading'>Add a new course</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Course Name</label>
