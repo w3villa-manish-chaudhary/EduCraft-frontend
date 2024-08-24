@@ -7,7 +7,6 @@ import Image from 'next/image';
 import Img from '../../../public/signup.jpg';
 import Link from 'next/link';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import OtpVerifyPage from '../../components/otpVerify'
 
