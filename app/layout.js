@@ -1,10 +1,10 @@
+require('dotenv').config();
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import CustomNavbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import './globals.css';
-require('dotenv').config();
 
 
 export default function RootLayout({ children }) {
