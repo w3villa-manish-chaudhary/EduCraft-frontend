@@ -2,10 +2,12 @@ import React from 'react';
 import './Style/CardCourse.css';
 
 function CardCourse({ course }) {
+  const rating = course.rating ? parseFloat(course.rating).toFixed(1) : '0.0';
+
   return (
     <div className="card">
       <div className="card-img">
-        <img src="https://picsum.photos/268/149" alt="img" />
+        <img src="https://picsum.photos/268/149" alt={`${course.course_name} image`} />
       </div>
       <div className="cardDetails">
         <div className="Heading">
@@ -15,13 +17,13 @@ function CardCourse({ course }) {
           <p>{course.trainer}</p>
         </div>
         <div className="rating">
-          <span>{course.rating}</span>
+          <span>{rating}</span>
           <span>⭐</span>
-          <span>({course.rating_count})</span>
+          <span>({course.rating_count || 0})</span>
         </div>
         <div className="price">
-          <span className="current-price">${course.price}</span>
-          {course.oldprice && <span className="original-price">${course.oldprice}</span>}
+          <span className="current-price">₹{course.price}</span>
+          {course.oldprice && <span className="original-price">₹{course.oldprice}</span>}
         </div>
       </div>
     </div>

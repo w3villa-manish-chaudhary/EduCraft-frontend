@@ -23,6 +23,8 @@ function DetailsCoures({ params }) {
     if (!course) {
         return <div>Loading...</div>;
     }
+  const rating = course.rating ? parseFloat(course.rating).toFixed(1) : '0.0';
+
 
     return (
         <div className='container-fluid'>
@@ -37,7 +39,8 @@ function DetailsCoures({ params }) {
                                 <div className='course-meta'>
                                     <p className='bestseller'>Bestseller</p>
                                     <p className='rating'>
-                                        {course.rating}/5
+          <span>{rating}</span>
+                                        /5
                                         <i className="fa fa-star" aria-hidden="true"></i>
                                         <i className="fa fa-star" aria-hidden="true"></i>
                                         <i className="fa fa-star" aria-hidden="true"></i>
