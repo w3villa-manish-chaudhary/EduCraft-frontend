@@ -21,70 +21,68 @@ function DetailsCoures({ params }) {
     }, [uniqueId]);
 
     if (!course) {
-        return <div>Loading...</div>;
+        return <div className='Loading'>Loading...</div>;
     }
-  const rating = course.rating ? parseFloat(course.rating).toFixed(1) : '0.0';
+    const rating = course.rating ? parseFloat(course.rating).toFixed(1) : '0.0';
 
 
     return (
-        <div className='container-fluid'>
-            <div>
-                <div className='upper'>
-                    <div className='container'>
-                        <div className="">
-                            <div className='details-main'>
-                                <h2 className='course-name'>{course.course_name}</h2>
-                                <p className='course-description'>{course.description}</p>
+        <div>
+            <div className='upper'>
+                <div className='container'>
+                    <div className="">
+                        <div className='details-main'>
+                            <h2 className='course-name'>{course.course_name}</h2>
+                            <p className='course-description'>{course.description}</p>
 
-                                <div className='course-meta'>
-                                    <p className='bestseller'>Bestseller</p>
-                                    <p className='rating'>
-          <span>{rating}</span>
-                                        /5
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                        <i className="fa fa-star-half" aria-hidden="true"></i>
-                                    </p>
-                                    <p className='rating-count'>({course.rating_count} ratings)</p>
-                                    <p className='enroll-info'>1,324,178 students</p>
-                                </div>
-                                <p className='creator-name'>Created by <a href="#" target='_blank'>{course.trainer}</a></p>
+                            <div className='course-meta'>
+                                <p className='bestseller'>Bestseller</p>
+                                <p className='rating2'>
+                                    <span>{rating}</span>
+                                    /5
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                    <i className="fa fa-star-half" aria-hidden="true"></i>
+                                </p>
+                                <p className='rating-count2'>({course.rating_count} ratings)</p>
+                                <p className='enroll-info'>1,324,178 students</p>
                             </div>
+                            <p className='creator-name'>Created by <a href="#" target='_blank'>{course.trainer}</a></p>
+                        </div>
 
-                            <div className='details_card'>
-                                <div className='card-content'>
-                                    <img src="https://picsum.photos/340/149" alt="Course preview" className="preview-image" />
-                                    <div className='card-body'>
-                                        <div className='price-info'>
-                                            <span className='current-price'>₹{course.price}</span>
-                                            <span className='original-price'>₹{course.oldprice}</span>
-                                            <span className='discount'>87% off</span>
-                                        </div>
-                                        <p className='time-left'>3 days left at this price!</p>
-                                        <button className='btn btn-primary btn-block'>Add to cart</button>
-                                        <p className='money-back'>30-Day Money-Back Guarantee</p>
-                                        <p className='lifetime-access'>Full Lifetime Access.</p>
+                        <div className='details_card'>
+                            <div className='card-content'>
+                                <img src="https://picsum.photos/340/149" alt="Course preview" className="preview-image" />
+                                <div className='card-body2'>
+                                    <div className='price-info'>
+                                        <span className='current-price'>₹{course.price}</span>
+                                        <span className='original-price'>₹{course.oldprice}</span>
+                                        <span className='discount'>87% off</span>
                                     </div>
+                                    <p className='time-left'> <span className="fw-bold">3 days left</span> at this price!</p>
+                                    <button className='btn btn-primary btn-block'>Add to cart</button>
+                                    <p className='money-back'>30-Day Money-Back Guarantee</p>
+                                    <p className='lifetime-access'>Full Lifetime Access.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='container'>
-                    <div className='What-learn-box'>
-                        <h2 className='what-learn-title'>What you'll learn</h2>
-                        <ul className='what-learn-list'>
-                            <li>Build 16 web development projects for your</li>
-                            <li>Work as a freelance web developer</li>
-                            <li>Master backend development with Node.</li>
-                            <li>Build fully-fledged websites and web apps for your startup or business.</li>
-                            <li>Master frontend development with React</li>
-                            <li>Learn professional developer best practices.</li>
-                            
-                        </ul>
-                    </div>
+            </div>
+            <div className='container'>
+                <div className='What-learn-box'>
+                    <h2 className='what-learn-title'>What you'll learn</h2>
+                    <ul className='what-learn-list'>
+                        <li>Build 16 web development projects for your</li>
+                        <li>Work as a freelance web developer</li>
+                        <li>Master backend development with Node.</li>
+                        <li>Build fully-fledged websites and web apps for your startup or business.</li>
+                        <li>Master frontend development with React</li>
+                        <li>Learn professional developer best practices.</li>
+
+                    </ul>
                 </div>
             </div>
         </div>
@@ -92,3 +90,7 @@ function DetailsCoures({ params }) {
 }
 
 export default DetailsCoures;
+
+
+
+

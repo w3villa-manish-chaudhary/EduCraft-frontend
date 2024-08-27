@@ -10,10 +10,10 @@ body {
     --gray: #494747 ;
   }
 
- .midscreen{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 60px;
+  .midscreen{
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin-top: 55px;
 
  }
