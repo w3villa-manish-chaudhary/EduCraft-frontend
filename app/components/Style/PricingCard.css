@@ -3,9 +3,10 @@
     border-radius: 10px;
     border: 1px solid white;
     box-shadow: rgba(145, 149, 153, 0.589) 5.95px 5.95px 8px;
-    width: 276px;
+    width: 100%; /* Adjusted for responsive width */
+    max-width: 276px; /* Ensure it doesn't stretch too much on larger screens */
+    margin: auto; /* Center the card */
 }
-
 
 .customcard .card-header span {
     font-size: 0.9rem;
@@ -35,4 +36,15 @@
 .customcard .card-body .btn {
     font-size: 1.2rem;
     padding: 0.8rem 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .customcard .card-body .card-title {
+        font-size: 1.8rem;
+    }
+    .customcard .card-body .btn {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
 }

@@ -12,14 +12,14 @@ const Testimonials = () => {
 
     {
       quote:
-        'I highly recommend Educative. The courses are well organized and easy to understand. I find that with full video courses,it can often be too easy to go into passive learning mode.',
+        'I highly recommend Educative. The courses are well organized and easy to understand. I find that with full video courses passive learning mode.',
       name: 'Adina Ong',
       title: 'Senior Engineering Manager',
     },
 
     {
         quote:
-          'I prefer Educative courses because they have a nice mix of text & images. I find that with full video courses, it can often be too easy to go into passive learning mode.',
+          'I prefer Educative courses because they have a nice mix of text & images. I find that with full video courses, it can often be too easy to learning mode.',
         name: 'Clifford Fajardo',
         title: 'Senior Software Engineer',
       },
@@ -29,7 +29,7 @@ const Testimonials = () => {
     <div className="container my-5">
       <h2 className="text-center mb-4 fw-bold">What Our Learners Say</h2>
       <hr />
-      <div className="row d-flex text-center justify-content-center">
+      <div className="row d-flex justify-content-center gap-3">
         {testimonialsData.map((testimonial, index) => (
           <div className="col-md-4" key={index}>
             <TestimonialCard {...testimonial} />

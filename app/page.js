@@ -1,15 +1,17 @@
 import React from 'react';
 import PricingSection from '@/app/components/PricingSection';
 import "./homepage.css";
-import Testimonials from '@/app/components/Testimonials'
+import Testimonials from '@/app/components/Testimonials';
 
 const HomePage = () => (
   <div className='main-container'>
-    <div className='mainheading' ><h1 className=' subheading fw-bold'>Level up your learning. Level up your career.</h1></div>
-    <div className='features'>
-      <h5><i className="fa-brands fa-readme"></i> 100+ Courses & Projects</h5>
-      <h5><i className="fa-solid fa-users"></i> 100+ Learners</h5>
-      <h5><i className="fa-solid fa-microchip"></i> AI-Powered Learning</h5>
+    <div className='mainheading'>
+      <h1 className='subheading fw-bold text-center m-auto'>Level up your learning. Level up your career.</h1>
+    </div>
+    <div className='features m-auto'>
+      <span className='col-md-4'><i className="fa-brands fa-readme"></i> 100+ Courses</span>
+      <span className='col-md-4'><i className="fa-solid fa-users"></i> 100+ Learners</span>
+      <span className='col-md-4'><i className="fa-solid fa-microchip"></i> AI-Powered Learning</span>
     </div>
     <PricingSection />
     <section className="features-section">
@@ -31,8 +33,7 @@ const HomePage = () => (
           </p>
         </div>
         <div className="feature-card">
-        <i className="fa-solid fa-section"></i>
-
+          <i className="fa-solid fa-section"></i>
           <h3 className="feature-title">Personalize Your Learning</h3>
           <p className="feature-description">
             Achieve your goals faster with a path designed just for you. Personalized Paths are customized and focused on your individual learning needs and career goals.
@@ -48,10 +49,8 @@ const HomePage = () => (
           <span className="premium-badge">PREMIUM</span>
         </div>
       </div>
-    <Testimonials />
-
+      <Testimonials />
     </section>
-    
   </div>
 );
 

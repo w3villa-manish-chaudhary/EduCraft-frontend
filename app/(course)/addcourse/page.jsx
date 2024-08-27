@@ -52,7 +52,7 @@ const AddCourseForm = () => {
   };
 
   return (
-    <div className="form-container mt-5">
+    <div className="form-container">
       <h2 className='courseheading'>Add a new course</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
