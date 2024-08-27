@@ -45,7 +45,7 @@ const EmailVerify = ({ params }) => {
     <Container className="mt-5">
       <Row className="justify-content-center">
         <Col md={6} className="text-center">
-          <h2 className="mb-4">Email Verification</h2>
+          <h2 className="mb-5">Email Verification</h2>
           {verificationStatus === 'pending' && (
             <>
               <Spinner animation="border" role="status" className="mb-3">

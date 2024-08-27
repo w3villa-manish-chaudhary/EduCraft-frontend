@@ -51,7 +51,8 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container mt-5">
+    
+    <div className="login-container">
       <div className="login-img" style={{ height: "500px", flex: 1 }}>
         <Image
           src={Img}
@@ -135,7 +136,7 @@ const Login = () => {
           </div>
         </form>
       </div>
-    </div>
+      </div>
   );
 };
 

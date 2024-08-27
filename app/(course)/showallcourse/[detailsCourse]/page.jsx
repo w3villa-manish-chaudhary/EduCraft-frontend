@@ -9,7 +9,7 @@ function DetailsCoures({ params }) {
 
     const fetchCourseById = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/course/${uniqueId}`);
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/course/${uniqueId}`);
             setCourse(response.data);
         } catch (error) {
             console.error("Error fetching course details:", error);
@@ -57,7 +57,7 @@ function DetailsCoures({ params }) {
                                 <img src="https://picsum.photos/340/149" alt="Course preview" className="preview-image" />
                                 <div className='card-body2'>
                                     <div className='price-info'>
-                                        <span className='current-price'>₹{course.price}</span>
+                                        <span className='current-price2'>₹{course.price}</span>
                                         <span className='original-price'>₹{course.oldprice}</span>
                                         <span className='discount'>87% off</span>
                                     </div>
@@ -90,7 +90,3 @@ function DetailsCoures({ params }) {
 }
 
 export default DetailsCoures;
-
-
-
-

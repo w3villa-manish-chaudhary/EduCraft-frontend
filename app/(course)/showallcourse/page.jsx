@@ -5,7 +5,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 
-function Page() {
+const Page = () => {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,18 +38,21 @@ function Page() {
   }
 
   return (
-    <div className="container">
-      <div className="d-flex gap-2 flex-wrap">
+    <div className="container mt-4">
+      <h1 className="text-center mt-5">Available Courses</h1>
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
         {details.map((course) => (
-          <Link href={`/showallcourse/${course.uniqueId}`} key={course.uniqueId} legacyBehavior>
-            <a className="text-decoration-none">
-              <CardCourse course={course} />
-            </a>
-          </Link>
+          <div key={course.uniqueId} className="col">
+            <Link href={`/showallcourse/${course.uniqueId}`} passHref legacyBehavior>
+              <a className="text-decoration-none">
+                <CardCourse course={course} />
+              </a>
+            </Link>
+          </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default Page;
