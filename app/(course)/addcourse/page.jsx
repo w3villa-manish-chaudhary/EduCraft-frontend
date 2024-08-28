@@ -52,7 +52,7 @@ const AddCourseForm = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="form-container-add">
       <h2 className='courseheading'>Add a new course</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -195,7 +195,7 @@ const AddCourseForm = () => {
 
         </div>
 
-        <button type="submit" className="btn btn-primary mt-3">
+        <button type="submit" className="btn btn-primary mt-3 button1">
           Add Course
         </button>
       </form>

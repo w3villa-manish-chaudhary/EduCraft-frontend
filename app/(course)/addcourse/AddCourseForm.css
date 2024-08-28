@@ -1,4 +1,4 @@
-.form-container {
+.form-container-add {
   width: 100%;
   max-width: 500px; 
   background-color: white;
@@ -37,18 +37,15 @@ textarea {
   gap: 10px; 
 }
 
-button {
+.button1 {
   width: 100%;
-  padding: 8px; 
-  border: none;
+  margin: auto;
   border-radius: 4px;
-  background-color: #007bff;
-  color: white;
   font-size: 14px; 
   cursor: pointer;
 }
 
-button:hover {
+button1:hover {
   background-color: #0056b3;
 }
 
