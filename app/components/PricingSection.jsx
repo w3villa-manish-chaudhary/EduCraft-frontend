@@ -14,6 +14,13 @@ const PricingSection = () => (
             '✓ Completion certificates',
             '✓ Easy access to new courses',
             '✓ AI-Powered Features',
+            '✕  3 Mock Interviews per month',
+            '✕ Personalized Paths',
+            '✕ AI Cloud Labs',
+            '✕ 1-On-1 Doubt Solving',
+            '✕ 1-On-1 Study Session'
+
+
           ]}
           discount={59}
         />
@@ -31,6 +38,10 @@ const PricingSection = () => (
             '✓ Completion certificates',
             '✓ Easy access to new courses',
             '✓ AI-Powered Features',
+            '✕ AI Cloud Labs',
+            '✕ 1-On-1 Doubt Solving'
+
+            
           ]}
           discount={58}
         />
