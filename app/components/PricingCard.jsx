@@ -61,14 +61,14 @@ const PricingCard = ({ title, price, features, isBestForLearning, discount }) =>
 
     return (
         <div className={`card customcard ${isBestForLearning ? 'bg-primary text-white' : ''}`}>
-            <div className="card-header">
+            <div className="card-header text-center">
                 {discount && <span className="discount-badge">{discount}% OFF</span>}
                 <h4 className="my-0 font-weight-normal">{title}</h4>
                 {isBestForLearning && <span className="most-popular-badge">Most Popular</span>}
                 {isBestForLearning && <span className="best-for-learning-badge">Best for Learning</span>}
             </div>
 
-            <div className="card-body d-flex flex-column justify-content-between">
+            <div className="card-body d-flex flex-column justify-content-between text-center">
                 <div>
                     <h1 className="card-title pricing-card-title">
                         ₹{price} <small className="">/ year</small>
@@ -82,7 +82,7 @@ const PricingCard = ({ title, price, features, isBestForLearning, discount }) =>
                     </ul>
                 </div>
 
-                <div>
+                <div className="text-center">
                     <button
                         type="button"
                         className="btn btn-lg btn-block btn-outline-dark"

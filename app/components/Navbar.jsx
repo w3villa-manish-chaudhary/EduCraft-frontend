@@ -25,6 +25,11 @@ const CustomNavbar = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link href="/courses" legacyBehavior>
+                <a className="nav-link custom-class-navtext">Courses</a>
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link href="/about" legacyBehavior>
                 <a className="nav-link custom-class-navtext">About</a>
               </Link>
@@ -34,6 +39,11 @@ const CustomNavbar = () => {
             <li className="nav-item">
               <Link href="/login" legacyBehavior>
                 <a className="nav-link custom-class-navtext">Sign In</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/login" legacyBehavior>
+                <a className="nav-link custom-class-navtext"><i class="fas fa-shopping-cart bold"></i></a>
               </Link>
             </li>
           </ul>
