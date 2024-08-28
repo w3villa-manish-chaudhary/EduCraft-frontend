@@ -43,7 +43,7 @@ const CustomNavbar = () => {
             </li>
             <li className="nav-item">
               <Link href="/login" legacyBehavior>
-                <a className="nav-link custom-class-navtext"><i class="fas fa-shopping-cart bold"></i></a>
+                <a className="nav-link custom-class-navtext"><i className="fas fa-shopping-cart bold"></i></a>
               </Link>
             </li>
           </ul>

@@ -43,7 +43,7 @@ const Page = () => {
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
         {details.map((course) => (
           <div key={course.uniqueId} className="col">
-            <Link href={`/showallcourse/${course.uniqueId}`} passHref legacyBehavior>
+            <Link href={`/courses/${course.uniqueId}`} passHref legacyBehavior>
               <a className="text-decoration-none">
                 <CardCourse course={course} />
               </a>

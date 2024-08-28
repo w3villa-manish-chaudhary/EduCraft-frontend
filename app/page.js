@@ -15,7 +15,7 @@ const HomePage = () => (
     </div>
     <PricingSection />
     <section className="features-section">
-      <h2 className="text-gray fw-bold">Why EduCraft?</h2>
+      <h2 className="text-gray fw-bold text-center mt-3">Why EduCraft?</h2>
       <hr />
       <div className="features-grid">
         <div className="feature-card">
