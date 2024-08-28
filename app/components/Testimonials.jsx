@@ -19,7 +19,7 @@ const Testimonials = () => {
 
     {
         quote:
-          'I prefer Educative courses because they have a nice mix of text & images. I find that with full video courses, it can often be too easy to learning mode.',
+          'I prefer Educative courses because they have a nice mix of text & images. I find that with full video courses, it can often be too easy and video to learning mode.',
         name: 'Clifford Fajardo',
         title: 'Senior Software Engineer',
       },
@@ -29,7 +29,7 @@ const Testimonials = () => {
     <div className="container my-5">
       <h2 className="text-center mb-4 fw-bold">What Our Learners Say</h2>
       <hr />
-      <div className="row d-flex justify-content-center gap-3">
+      <div className="d-flex container justify-content-between gap-1">
         {testimonialsData.map((testimonial, index) => (
           <div className="col-md-4" key={index}>
             <TestimonialCard {...testimonial} />

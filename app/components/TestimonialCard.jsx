@@ -12,7 +12,7 @@ const TestimonialCard = ({ quote, name, title}) => {
             <div className="d-flex align-items-center">
               <div>
                 <h6 className="mb-0 mt-2 text-dark">{name}</h6>
-                <p className="small text-muted mb-0">{title}</p>
+                <p className="small text-muted mb-1">{title}</p>
               </div>
             </div>
           </footer>
