@@ -47,7 +47,7 @@ const CustomNavbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/login" legacyBehavior>
+              <Link href="/checkout" legacyBehavior>
                 <a className="nav-link custom-class-navtext"><i className="fas fa-shopping-cart bold"></i></a>
               </Link>
             </li>
