@@ -26,9 +26,9 @@ const EmailVerify = ({ params }) => {
 
         if (response.ok) {
           setVerificationStatus('success');
-          if (!toastShown.current) { // Check if the toast has already been shown
+          if (!toastShown.current) {
             toast.success("User created successfully, please login!");
-            toastShown.current = true; // Mark the toast as shown
+            toastShown.current = true;
           }
           setTimeout(() => router.push('/login'), 3000);
         } else {
