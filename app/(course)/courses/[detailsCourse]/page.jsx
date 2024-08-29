@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import "./DetailsCoures.css";
 import axios from 'axios';
+import Image from 'next/image';
+import Img from '../../../../public/p.jpg';
 
 function DetailsCoures({ params }) {
     const [course, setCourse] = useState(null);
@@ -54,7 +56,7 @@ function DetailsCoures({ params }) {
 
                         <div className='details_card'>
                             <div className='card-content'>
-                                <img src="https://picsum.photos/340/149" alt="Course preview" className="preview-image" />
+                                <Image src={Img} alt="Course preview" className="preview-image" />
                                 <div className='card-body2'>
                                     <div className='price-info'>
                                         <span className='current-price2'>₹{course.price}</span>

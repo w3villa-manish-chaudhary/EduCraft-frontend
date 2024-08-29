@@ -5,6 +5,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 
+
 const Page = () => {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);

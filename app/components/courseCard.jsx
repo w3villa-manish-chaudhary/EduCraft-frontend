@@ -1,5 +1,7 @@
 import React from 'react';
 import './Style/CardCourse.css';
+import Image from 'next/image';
+import Img from '../../public/p.jpg';
 
 function CardCourse({ course }) {
   const rating = course.rating ? parseFloat(course.rating).toFixed(1) : '0.0';
@@ -7,7 +9,7 @@ function CardCourse({ course }) {
   return (
     <div className="card">
       <div className="card-img">
-        <img src="https://picsum.photos/268/149" alt={`${course.course_name} image`} />
+        <Image src={Img} alt={`${course.course_name} image`} />
       </div>
       <div className="cardDetails">
         <div className="Heading">
