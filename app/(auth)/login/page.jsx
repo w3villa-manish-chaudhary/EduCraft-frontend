@@ -10,12 +10,15 @@ import Img from '../../../public/login.jpg';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { setUser } from '@/Redux/features/userSlice';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,10 +41,9 @@ const Login = () => {
               }
             });
 
-            console.log('User data:', userResponse.data);
-            localStorage.setItem('user', JSON.stringify(userResponse.data));
-
-
+            console.log('User data:', userResponse.data.user);
+            localStorage.setItem('user', JSON.stringify(userResponse.data.user));
+            dispatch(setUser(userResponse.data.user));
             
             toast.success("User login successfully")
             router.push('/courses');

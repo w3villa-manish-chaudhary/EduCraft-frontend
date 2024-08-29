@@ -1,8 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearUser } from '@/Redux/features/userSlice';
 import './Style/Navbar.css';
 
 const CustomNavbar = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.userSlice.user);
+
+  const handleSignOut = () => {
+    dispatch(clearUser());
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark custom-class-navbgcolor fixed-top">
       <div className="container">
@@ -14,7 +26,15 @@ const CustomNavbar = () => {
             </Link>
           </span>
         </div>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
@@ -37,24 +57,32 @@ const CustomNavbar = () => {
             </li>
           </ul>
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link href="/login" legacyBehavior>
-                <a className="nav-link custom-class-navtext">Sign In</a>
-              </Link>
-            </li>
-           
-            <li className="nav-item">
-              <Link href="/" legacyBehavior>
-                <a className="nav-link custom-class-navtext">Sign Out</a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <h3>User-Name</h3>
-            </li>
+            {user ? (
+              <>
+                <li className="nav-item">
+                  <span className="nav-link custom-class-navtext">{user.name}</span>
+                </li>
+                <li className="nav-item">
+                  <Link href="/" legacyBehavior>
+                    <a className="nav-link custom-class-navtext" onClick={handleSignOut}>
+                      Sign Out
+                    </a>
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <li className="nav-item">
+                <Link href="/login" legacyBehavior>
+                  <a className="nav-link custom-class-navtext">Sign In</a>
+                </Link>
+              </li>
+            )}
 
             <li className="nav-item">
               <Link href="/checkout" legacyBehavior>
-                <a className="nav-link custom-class-navtext"><i className="fas fa-shopping-cart bold"></i></a>
+                <a className="nav-link custom-class-navtext">
+                  <i className="fas fa-shopping-cart bold"></i>
+                </a>
               </Link>
             </li>
           </ul>
