@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearUser } from '@/Redux/features/userSlice';
@@ -7,13 +8,28 @@ import './Style/Navbar.css';
 const CustomNavbar = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userSlice.user);
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleSignOut = () => {
     dispatch(clearUser());
-
     localStorage.removeItem('token');
     localStorage.removeItem('user');
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark custom-class-navbgcolor fixed-top">
@@ -29,22 +45,20 @@ const CustomNavbar = () => {
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
+          onClick={() => setIsOpen(!isOpen)}
           aria-controls="navbarNav"
-          aria-expanded="false"
+          aria-expanded={isOpen}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <div className={`collapse navbar-collapse justify-content-between ${isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
               <Link href="/" legacyBehavior>
                 <a className="nav-link custom-class-navtext">Home</a>
               </Link>
             </li>
-
             <li className="nav-item">
               <Link href="/courses" legacyBehavior>
                 <a className="nav-link custom-class-navtext">Courses</a>
@@ -56,16 +70,30 @@ const CustomNavbar = () => {
               </Link>
             </li>
           </ul>
-          <ul className="navbar-nav">
+          <ul className="navbar-nav align-items-center">
             {user ? (
               <>
-                <li className="nav-item">
-                  <span className="nav-link custom-class-navtext">{user.name}</span>
+                <li className="nav-item dropdown" ref={dropdownRef}>
+                  <div 
+                    className="nav-link custom-class-navtext user-avatar"
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                  >
+                    <div className='userName'>{user.name}</div>
+                  </div>
+                  {dropdownOpen && (
+                    <div className="dropdown-menu show customdropdown"
+                    >
+                      <Link href="/profile" legacyBehavior>
+                        <a className="dropdown-item userNameDrop">Profile</a>
+                      </Link>
+                      <a className="dropdown-item customlogout userNameDrop " onClick={handleSignOut}>Logout</a>
+                    </div>
+                  )}
                 </li>
-                <li className="nav-item">
-                  <Link href="/" legacyBehavior>
-                    <a className="nav-link custom-class-navtext" onClick={handleSignOut}>
-                      Sign Out
+                <li className="nav-item ml-2">
+                  <Link href="/checkout" legacyBehavior>
+                    <a className="nav-link custom-class-navtext">
+                      <i className="fas fa-shopping-cart bold"></i>
                     </a>
                   </Link>
                 </li>
@@ -77,14 +105,6 @@ const CustomNavbar = () => {
                 </Link>
               </li>
             )}
-
-            <li className="nav-item">
-              <Link href="/checkout" legacyBehavior>
-                <a className="nav-link custom-class-navtext">
-                  <i className="fas fa-shopping-cart bold"></i>
-                </a>
-              </Link>
-            </li>
           </ul>
         </div>
       </div>

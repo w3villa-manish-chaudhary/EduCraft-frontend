@@ -1,30 +1,58 @@
 .custom-class-navtext {
-    color: white !important;
-    font-size: 1.1rem !important;
+  color: white !important;
+  font-size: 1.1rem !important;
 
-    
-  }
-  .logo{
-    height: 30px;
-    width: 30px; 
-  }
-  .Logoname{
-    font-size: 24px !important;
-    font-weight: 550 !important;
-    text-decoration: none;
-  }
-  .custom-class-navbgcolor {
-    background-color: #6aa7e4;
-    background: #4C6BFA !important;
-    
-  }
-  
-  .custom-class-navbgcolor .navbar-nav .nav-link {
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-  }
-  
-  .custom-class-navbgcolor .navbar-nav .nav-link:hover {
-    background-color: #3a87fa8c; 
-  }
- 
+
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
+.Logoname {
+  font-size: 24px !important;
+  font-weight: 550 !important;
+  text-decoration: none;
+}
+
+.custom-class-navbgcolor {
+  background-color: #6aa7e4;
+  background: #4C6BFA !important;
+
+}
+
+.custom-class-navbgcolor .navbar-nav .nav-link {
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+
+
+}
+
+.custom-class-navbgcolor .navbar-nav .nav-link:hover {
+  background-color: #3a87fa8c;
+  cursor: pointer;
+}
+
+.customdropdown {
+
+  margin-top: 10px !important;
+  border: rgb(212, 203, 203) !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+
+
+}
+
+.customlogout {
+  cursor: pointer;
+}
+
+.userNameDrop {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+.userName {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+}
