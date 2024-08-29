@@ -4,9 +4,14 @@ import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearUser } from '@/Redux/features/userSlice';
 import './Style/Navbar.css';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+
 
 const CustomNavbar = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
+
   const user = useSelector((state) => state.userSlice.user);
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -16,6 +21,8 @@ const CustomNavbar = () => {
     dispatch(clearUser());
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    router.push('/login');
+    toast.success("User logout successfully")
   };
 
   useEffect(() => {
