@@ -29,7 +29,7 @@ const Login = () => {
       if (response.status === 200 || response.status === 201) {
         console.log('Login successful:', response.data);
         localStorage.setItem('token', response.data.token);
-        router.push('/');
+        router.push('/courses');
       } else {
         setError('Unexpected response from server');
       }
