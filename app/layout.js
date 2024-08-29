@@ -1,4 +1,4 @@
-'use client'
+'use client';
 require('dotenv').config();
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
@@ -19,19 +19,10 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <CustomNavbar />
           <div className='midscreen'> {children} </div>
-          <ToastContainer
-            autoClose={3000}
-            hideProgressBar
-            newestOnTop
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
           <Footer />
         </ReduxProvider>
+        <ToastContainer
+        />
       </body>
     </html>
   );

@@ -9,14 +9,13 @@ import Image from 'next/image';
 import Img from '../../../public/login.jpg';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
-
-  // console.log(">>>>>>>>>>>>>>>>", `${process.env.NEXT_PUBLIC_BACKEND_URL}/signin` ); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +28,31 @@ const Login = () => {
       if (response.status === 200 || response.status === 201) {
         console.log('Login successful:', response.data);
         localStorage.setItem('token', response.data.token);
-        router.push('/courses');
+
+        // Fetch user data
+        const getUserData = async () => {
+          try {
+            const userResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/profile`, {
+              headers: {
+                'Authorization': `${localStorage.getItem('token')}`
+              }
+            });
+
+            console.log('User data:', userResponse.data);
+            localStorage.setItem('user', JSON.stringify(userResponse.data));
+
+
+            
+            toast.success("User login successfully")
+            router.push('/courses');
+          } catch (userError) {
+            console.error('Failed to fetch user data:', userError.response?.data || userError.message);
+            setError('Failed to fetch user profile. Please try again.');
+          }
+        };
+
+        // Call the function to fetch user data
+        getUserData();
       } else {
         setError('Unexpected response from server');
       }
@@ -44,14 +67,12 @@ const Login = () => {
     window.location.href = redirectUrl;
   };
 
-
   const githubClick = () => {
     const redirectUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/github`;
     window.location.href = redirectUrl;
   };
 
   return (
-    
     <div className="login-container">
       <div className="login-img" style={{ height: "500px", flex: 1 }}>
         <Image
@@ -136,7 +157,7 @@ const Login = () => {
           </div>
         </form>
       </div>
-      </div>
+    </div>
   );
 };
 
