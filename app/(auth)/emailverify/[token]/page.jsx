@@ -1,14 +1,15 @@
 'use client';
 require('dotenv').config();
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
-
+import { toast } from 'react-toastify';
 
 const EmailVerify = ({ params }) => {
   const { token } = params;
   const router = useRouter();
   const [verificationStatus, setVerificationStatus] = useState('pending');
+  const toastShown = useRef(false);
 
   useEffect(() => {
     const verifyEmail = async () => {
@@ -25,7 +26,11 @@ const EmailVerify = ({ params }) => {
 
         if (response.ok) {
           setVerificationStatus('success');
-          setTimeout(() => router.push('/'), 2000);
+          if (!toastShown.current) { // Check if the toast has already been shown
+            toast.success("User created successfully, please login!");
+            toastShown.current = true; // Mark the toast as shown
+          }
+          setTimeout(() => router.push('/login'), 3000);
         } else {
           setVerificationStatus('error');
           console.error(result.message);
@@ -58,7 +63,7 @@ const EmailVerify = ({ params }) => {
             <Alert variant="success">
               <Alert.Heading>Verification Completed!</Alert.Heading>
               <p>
-                Your email has been successfully verified. You will be redirected to the homepage shortly.
+                Your email has been successfully verified. You will be redirected to the login page shortly.
               </p>
             </Alert>
           )}
