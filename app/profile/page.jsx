@@ -1,19 +1,19 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import jsPDF from 'jspdf'; 
+import jsPDF from 'jspdf';
 import styles from './Profile.module.css';
 import Img from '../../public/user.jpg';
 import axios from 'axios';
 
 const Profile = () => {
-    const [user, setUser] = useState(null); 
+    const [user, setUser] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [updatedUser, setUpdatedUser] = useState(null);
     const [error, setError] = useState('');
-    const [query, setQuery] = useState(''); 
-    const [suggestions, setSuggestions] = useState([]); 
-    const [selectedLocation, setSelectedLocation] = useState(null); 
+    const [query, setQuery] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
+    const [selectedLocation, setSelectedLocation] = useState(null);
 
     const apiKey = process.env.NEXT_PUBLIC_OPENCAGE_API_KEY;
 
@@ -62,7 +62,7 @@ const Profile = () => {
     const handleSuggestionClick = (suggestion) => {
         setSelectedLocation(suggestion.geometry);
         setUpdatedUser({ ...updatedUser, address: suggestion.formatted });
-        setSuggestions([]); 
+        setSuggestions([]);
     };
 
     const handleEditClick = () => {
@@ -78,7 +78,7 @@ const Profile = () => {
                 }
             });
             console.log('User data updated:', response.data);
-            setUser(updatedUser); 
+            setUser(updatedUser);
             setIsEditing(false);
         } catch (error) {
             console.error('Failed to update user data:', error.response?.data || error.message);
@@ -101,7 +101,7 @@ const Profile = () => {
     };
 
     if (!user) {
-        return <div>Loading...</div>; 
+        return <div>Loading...</div>;
     }
 
     return (
@@ -117,12 +117,7 @@ const Profile = () => {
                             height={150}
                         />
                     </div>
-                    <button
-                                className="btn btn-secondary mt-4"
-                                onClick={handleEditClick}
-                            >
-                                Edit Profile
-                            </button>
+
                 </div>
                 <div className="col-md-8">
                     {isEditing ? (
@@ -195,17 +190,22 @@ const Profile = () => {
                             <p><strong>Address:</strong> {user.address || 'Not provided'}</p>
                             {selectedLocation && (
                                 <iframe
-                                className={styles.mapIframe}
+                                    className={styles.mapIframe}
                                     width="100%"
                                     height="300"
                                     src={`https://www.openstreetmap.org/export/embed.html?bbox=${selectedLocation.lng - 0.01},${selectedLocation.lat - 0.01},${selectedLocation.lng + 0.01},${selectedLocation.lat + 0.01}&layer=mapnik`}
                                     frameBorder="0"
                                     allowFullScreen
-                                
+
                                 ></iframe>
                             )}
-                          
-                            {/* New Button for Downloading PDF */}
+                            <button
+                                className="btn btn-secondary"
+                                onClick={handleEditClick}
+                            >
+                                Edit Profile
+                            </button>
+
                             <button
                                 className="btn btn-success ms-2"
                                 onClick={handleDownloadPDF}
