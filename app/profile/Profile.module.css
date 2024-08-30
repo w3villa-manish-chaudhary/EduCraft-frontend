@@ -1,0 +1,24 @@
+.profileContainer {
+    margin-top: 100px;
+  }
+  
+  .profileImgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profileImg {
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+  
+  .userName {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
