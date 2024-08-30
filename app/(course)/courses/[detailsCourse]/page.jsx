@@ -4,6 +4,7 @@ import "./DetailsCoures.css";
 import axios from 'axios';
 import Image from 'next/image';
 import Img from '../../../../public/p.jpg';
+import Link from 'next/link';
 
 function DetailsCoures({ params }) {
     const [course, setCourse] = useState(null);
@@ -64,7 +65,8 @@ function DetailsCoures({ params }) {
                                         <span className='discount'>87% off</span>
                                     </div>
                                     <p className='time-left'> <span className="fw-bold">3 days left</span> at this price!</p>
-                                    <button className='btn btn-primary btn-block'>Add to cart</button>
+                                    <Link href = {`/courses/checkout/${course.uniqueId}`} ><button className='btn btn-primary btn-block'>Add to cart</button></Link>
+                                    
                                     <p className='money-back'>30-Day Money-Back Guarantee</p>
                                     <p className='lifetime-access'>Full Lifetime Access.</p>
                                 </div>
