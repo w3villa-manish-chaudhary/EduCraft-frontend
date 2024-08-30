@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './OtpVerifyPage.css'; 
 import OauthOtpVerifyPage from '../../components/oAuthOTPVerify'
 
 const OtpVerifyPage = () => {
@@ -56,7 +55,7 @@ const OtpVerifyPage = () => {
     
 
     <Container>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-md-center mt-5">
         <Col md={6}>
           <h2 className="text-center mb-4">Enter the mobile number for verification</h2>
           <Form onSubmit={handleSubmit}>

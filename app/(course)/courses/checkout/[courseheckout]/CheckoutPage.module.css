@@ -1,0 +1,103 @@
+.customContainer {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  .customCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  .customCardBody {
+    padding: 20px;
+  }
+  
+  .customCardTitle {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .customCardText {
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .customListGroup {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+  
+  .customListGroupItem {
+    border: none;
+    padding: 0.5rem 0;
+    color: #333;
+  }
+  
+  .customTextMuted {
+    color: #888;
+  }
+  
+  .customTextDecorationLineThrough {
+    text-decoration: line-through;
+  }
+  
+  .customPriceOld {
+    color: #888;
+    text-decoration: line-through;
+  }
+  
+  .customPriceNew {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d9534f;
+    margin-left: 0.5rem;
+  }
+  
+  .customButton {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .customButtonPrimary {
+    color: #fff;
+    background-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  .customButtonPrimary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+  }
+  
+  .customWidth100 {
+    width: 100%;
+  }
+  
+  .customMarginTop5 {
+    margin-top: 3rem;
+  }
+  
+  .customMarginTop3 {
+    margin-top: 1.5rem;
+  }
+  
+  .customMarginBottom4 {
+    margin-bottom: 2rem;
+  }
+  

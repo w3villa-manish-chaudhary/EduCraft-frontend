@@ -1,0 +1,34 @@
+.profileContainer {
+    margin-top: 100px;
+  }
+  
+  .profileImgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profileImg {
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+  
+  .userName {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+
+.mapIframe {
+  border: solid #ffffff; 
+  border-radius: 4px;
+  width: 100%;
+  height: 300px;
+  box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+
+
+}

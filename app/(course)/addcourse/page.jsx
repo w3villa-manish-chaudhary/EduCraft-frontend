@@ -14,7 +14,10 @@ const AddCourseForm = () => {
     end_date: '',
     category: '',
     price: '',
-    rating: ''
+    rating: '',
+    trainer: '',
+    oldprice: '',
+    rating_count: ''
   });
 
   const handleChange = (e) => {
@@ -38,7 +41,10 @@ const AddCourseForm = () => {
         end_date: '',
         category: '',
         price: '',
-        rating: ''
+        rating: '',
+        trainer: '',
+        oldprice: '',
+        rating_count: ''
       });
     } catch (error) {
       toast.error('Error creating course: ' + error.message);
@@ -46,10 +52,8 @@ const AddCourseForm = () => {
   };
 
   return (
-
-
-  <div className="form-container mt-5">
-    <h2 className='courseheading'>Add a new course</h2>
+    <div className="form-container-add">
+      <h2 className='courseheading'>Add a new course</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Course Name</label>
@@ -114,16 +118,18 @@ const AddCourseForm = () => {
 
         <div className="two-column">
           <div className="form-group">
-            <label>Category</label>
+            <label>Old Price</label>
             <input
-              type="text"
-              name="category"
-              value={formData.category}
+              type="number"
+              name="oldprice"
+              value={formData.oldprice}
               onChange={handleChange}
               className="form-control"
-              required
             />
           </div>
+
+
+
 
           <div className="form-group">
             <label>Price</label>
@@ -138,22 +144,58 @@ const AddCourseForm = () => {
           </div>
         </div>
 
+        <div className="two-column">
+          <div className="form-group">
+            <label>Rating</label>
+            <input
+              type="number"
+              name="rating"
+              value={formData.rating}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Rating Count</label>
+            <input
+              type="number"
+              name="rating_count"
+              value={formData.rating_count}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+        </div>
+
+
         <div className="form-group">
-          <label>Rating</label>
+          <label>Trainer</label>
           <input
-            type="number"
-            name="rating"
-            value={formData.rating}
+            type="text"
+            name="trainer"
+            value={formData.trainer}
             onChange={handleChange}
             className="form-control"
-            required
-            step="0.1"
-            max="5"
-            min="0"
           />
         </div>
 
-        <button type="submit" className="btn btn-primary mt-3">
+        <div className="form-group">
+          <div className="form-group">
+            <label>Category</label>
+            <input
+              type="text"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              className="form-control"
+              required
+            />
+          </div>
+
+        </div>
+
+        <button type="submit" className="btn btn-primary mt-3 button1">
           Add Course
         </button>
       </form>

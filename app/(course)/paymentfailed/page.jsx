@@ -14,7 +14,7 @@ const PaymentFailed = () => {
                 <h3 className="mt-2">Payment Failed</h3>
             </div>
             <div className="mt-4 d-flex justify-content-center gap-2">
-                <button href="/dashboard" className="btn btn-dark  mb-2">Cancel</button>
+                <button href="/" className="btn btn-dark  mb-2">Cancel</button>
                 <button className="btn btn-primary mb-2">Retry</button>
             </div>
             <p className="mt-3 text-muted">

@@ -57,7 +57,7 @@ const Signup = () => {
       if (response.status === 201) {
         toast.success('Signup successful! Please verify your OTP');
         console.log('User created:', response.data);
-        localStorage.setItem('token', response.data.token);
+        // localStorage.setItem('token', response.data.token);
         setShowOtp(true);
       } else {
         throw new Error('Signup failed!');
@@ -84,7 +84,7 @@ const Signup = () => {
       {showOtp ? (
         <OtpVerifyPage phone={formData.phone} />
       ) : (
-        <div className="signup-container mt-5">
+        <div className="signup-container">
           <div className="signup-form">
             <h3 className="text-centerheading">Sign Up
               <span className='description'>

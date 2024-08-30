@@ -6,9 +6,12 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 10px;
+  max-width: 850px;
+  margin: auto;
+  margin-top: 85px ;
+
 }
-
-
+  
 .signup-image {
   height: 100% !important;
   width: 100% !important;
