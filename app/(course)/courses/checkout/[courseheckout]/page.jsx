@@ -92,8 +92,8 @@ const CheckoutPage = ({ params }) => {
             <li className={styles.customListGroupItem}><strong>Rating:</strong> {courseData.rating} ({courseData.rating_count} ratings)</li>
           </ul>
           <div className={`${styles.customMarginTop3}`}>
-            <span className={styles.customPriceOld}>${courseData.oldprice.toFixed(2)}</span>
-            <span className={styles.customPriceNew}>${parseFloat(courseData.price).toFixed(2)}</span>
+            <span className={styles.customPriceOld}>₹{courseData.oldprice.toFixed(2)}</span>
+            <span className={styles.customPriceNew}>₹{parseFloat(courseData.price).toFixed(2)}</span>
           </div>
           <button type="button" className={`${styles.customButton} ${styles.customButtonPrimary} ${styles.customWidth100} ${styles.customMarginTop3}`} onClick={makePayment}>Buy Now</button>
         </div>
