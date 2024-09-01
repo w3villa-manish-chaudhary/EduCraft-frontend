@@ -5,18 +5,32 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 
+import { useDispatch } from 'react-redux';
+import { setUser } from '@/Redux/features/userSlice';
+
 
 const Page = () => {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
+  const dispatch = useDispatch()
+
   const fetchData = async () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/course/showallcourse`
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/course/showallcourse`, {withCredentials:true}
       );
+      // console.log(":::::::::::::::::::::::", response.data.user);
+
+
+
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+      dispatch(setUser(response.data.user));
+
       setDetails(response.data.data);
+      
     } catch (error) {
       console.error("Error fetching course data:", error);
     } finally {
