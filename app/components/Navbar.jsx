@@ -66,11 +66,14 @@ const CustomNavbar = () => {
                 <a className="nav-link custom-class-navtext">Home</a>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link href="/courses" legacyBehavior>
-                <a className="nav-link custom-class-navtext">Courses</a>
-              </Link>
-            </li>
+            {user && (
+              <li className="nav-item">
+                <Link href="/courses" legacyBehavior>
+                  <a className="nav-link custom-class-navtext">Courses</a>
+                </Link>
+              </li>)}
+
+
             <li className="nav-item">
               <Link href="/about" legacyBehavior>
                 <a className="nav-link custom-class-navtext">About</a>
@@ -81,7 +84,7 @@ const CustomNavbar = () => {
             {user ? (
               <>
                 <li className="nav-item dropdown" ref={dropdownRef}>
-                  <div 
+                  <div
                     className="nav-link custom-class-navtext user-avatar"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                   >
