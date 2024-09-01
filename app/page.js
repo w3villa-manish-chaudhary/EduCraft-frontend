@@ -13,7 +13,7 @@ const HomePage = () => {
 
   const getOauthUserData = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/auth/login/success', { withCredentials: true });
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login/success`, { withCredentials: true });
       console.log("User Data:::::::::>>>>>>>>", response.data);
 
       localStorage.setItem('token', response.data.token);

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,22 +7,35 @@ import './Style/Navbar.css';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 
-
 const CustomNavbar = () => {
   const dispatch = useDispatch();
   const router = useRouter();
-
   const user = useSelector((state) => state.userSlice.user);
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const handleSignOut = () => {
-    dispatch(clearUser());
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    router.push('/login');
-    toast.success("User logout successfully")
+  const handleSignOut = async () => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/logout`, {
+        method: 'GET',
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        dispatch(clearUser());
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        toast.success("User logged out successfully");
+        router.push('/login');
+      } else {
+        console.error('Logout failed');
+        toast.error("Logout failed. Please try again.");
+      }
+    } catch (error) {
+      console.error('An error occurred during logout:', error);
+      toast.error("An error occurred during logout. Please try again.");
+    }
   };
 
   useEffect(() => {
@@ -66,14 +79,12 @@ const CustomNavbar = () => {
                 <a className="nav-link custom-class-navtext">Home</a>
               </Link>
             </li>
-            {user && (
-              <li className="nav-item">
-                <Link href="/courses" legacyBehavior>
-                  <a className="nav-link custom-class-navtext">Courses</a>
-                </Link>
-              </li>)}
 
-
+            <li className="nav-item">
+              <Link href="/courses" legacyBehavior>
+                <a className="nav-link custom-class-navtext">Courses</a>
+              </Link>
+            </li>
             <li className="nav-item">
               <Link href="/about" legacyBehavior>
                 <a className="nav-link custom-class-navtext">About</a>
@@ -91,12 +102,11 @@ const CustomNavbar = () => {
                     <div className='userName'>{user.name}</div>
                   </div>
                   {dropdownOpen && (
-                    <div className="dropdown-menu show customdropdown"
-                    >
+                    <div className="dropdown-menu show customdropdown">
                       <Link href="/profile" legacyBehavior>
                         <a className="dropdown-item userNameDrop">Profile</a>
                       </Link>
-                      <a className="dropdown-item customlogout userNameDrop " onClick={handleSignOut}>Logout</a>
+                      <a className="dropdown-item customlogout userNameDrop" onClick={handleSignOut}>Logout</a>
                     </div>
                   )}
                 </li>
