@@ -79,7 +79,8 @@ const CustomNavbar = () => {
               <Link href="/" legacyBehavior>
                 <a className="nav-link custom-class-navtext">Home</a>
               </Link>
-            
+            </li>
+
             <li className="nav-item">
               <Link href="/courses" legacyBehavior>
                 <a className="nav-link custom-class-navtext">Courses</a>
