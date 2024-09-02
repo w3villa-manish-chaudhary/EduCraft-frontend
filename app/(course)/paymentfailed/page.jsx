@@ -6,7 +6,7 @@ import { BsExclamationTriangleFill } from 'react-icons/bs';
 const PaymentFailed = () => {
     return (
         <div className="container text-center mt-5">
-            <h3>can't make any purchases</h3>
+            <h3>can&rsquo;t make any purchases</h3>
             <div className="mt-4">
                 <div className="payment-failed-icon">
                     <BsExclamationTriangleFill size={50} color="red" />

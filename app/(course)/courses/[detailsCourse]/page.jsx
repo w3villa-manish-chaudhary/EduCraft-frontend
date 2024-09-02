@@ -1,5 +1,5 @@
-'use client'
-import React, { useEffect, useState } from 'react';
+'use client';
+import React, { useEffect, useState, useCallback } from 'react';
 import "./DetailsCoures.css";
 import axios from 'axios';
 import Image from 'next/image';
@@ -10,24 +10,25 @@ function DetailsCoures({ params }) {
     const [course, setCourse] = useState(null);
     const uniqueId = params.detailsCourse;
 
-    const fetchCourseById = async () => {
+    // Memoize the function using useCallback
+    const fetchCourseById = useCallback(async () => {
         try {
             const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/course/${uniqueId}`);
             setCourse(response.data);
         } catch (error) {
             console.error("Error fetching course details:", error);
         }
-    };
+    }, [uniqueId]);
 
     useEffect(() => {
         fetchCourseById();
-    }, [uniqueId]);
+    }, [fetchCourseById]);
 
     if (!course) {
         return <div className='Loading'>Loading...</div>;
     }
-    const rating = course.rating ? parseFloat(course.rating).toFixed(1) : '0.0';
 
+    const rating = course.rating ? parseFloat(course.rating).toFixed(1) : '0.0';
 
     return (
         <div>
@@ -65,7 +66,7 @@ function DetailsCoures({ params }) {
                                         <span className='discount'>87% off</span>
                                     </div>
                                     <p className='time-left'> <span className="fw-bold">3 days left</span> at this price!</p>
-                                    <Link href = {`/courses/checkout/${course.uniqueId}`} ><button className='btn btn-primary btn-block'>Add to cart</button></Link>
+                                    <Link href={`/courses/checkout/${course.uniqueId}`}><button className='btn btn-primary btn-block'>Add to cart</button></Link>
                                     
                                     <p className='money-back'>30-Day Money-Back Guarantee</p>
                                     <p className='lifetime-access'>Full Lifetime Access.</p>
@@ -77,7 +78,7 @@ function DetailsCoures({ params }) {
             </div>
             <div className='container'>
                 <div className='What-learn-box'>
-                    <h2 className='what-learn-title'>What you'll learn</h2>
+                    <h2 className='what-learn-title'>What you&rsquo;ll learn</h2>
                     <ul className='what-learn-list'>
                         <li>Build 16 web development projects for your</li>
                         <li>Work as a freelance web developer</li>
@@ -85,7 +86,6 @@ function DetailsCoures({ params }) {
                         <li>Build fully-fledged websites and web apps for your startup or business.</li>
                         <li>Master frontend development with React</li>
                         <li>Learn professional developer best practices.</li>
-
                     </ul>
                 </div>
             </div>

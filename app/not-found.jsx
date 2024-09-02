@@ -22,7 +22,7 @@ function NotFound() {
         />
       </div>
       <h1 className="display-4 mb-3">Oops! Page Not Found</h1>
-      <p className="lead mb-4">The page you're looking for doesn't exist or has been removed.</p>
+      <p className="lead mb-4">The page you&rsquo;re looking for doesn&rsquo;t exist or has been removed.</p>
       <Link href="/" className="btn btn-success">Go to Home</Link>
     </div>
   );

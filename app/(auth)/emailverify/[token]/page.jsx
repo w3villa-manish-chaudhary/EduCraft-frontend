@@ -71,7 +71,7 @@ const EmailVerify = ({ params }) => {
             <Alert variant="danger">
               <Alert.Heading>Verification Failed</Alert.Heading>
               <p>
-                We couldn't verify your email. Please try again or contact support.
+                We couldn&rsquo;t verify your email. Please try again or contact support.
               </p>
             </Alert>
           )}
