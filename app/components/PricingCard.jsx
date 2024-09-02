@@ -34,7 +34,7 @@ const PricingCard = ({ title, price, features, isBestForLearning, discount }) =>
                 "Content-Type": "application/json"
             };
 
-            const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/course/payments`, { 
+            const response = await fetch(`/course/payments`, { 
                 method: "POST",
                 headers: headers,
                 body: JSON.stringify(body)

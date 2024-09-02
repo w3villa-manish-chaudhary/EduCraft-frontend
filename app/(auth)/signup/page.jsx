@@ -48,7 +48,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/signup`, formData, {
+      const response = await axios.post('/signup', formData, {
         headers: {
           'Content-Type': 'application/json',
         }

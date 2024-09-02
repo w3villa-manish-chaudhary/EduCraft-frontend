@@ -41,7 +41,7 @@ const OtpVerifyPage = ({ phone: initialPhone }) => {
     }
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/otpverify`, { phone, otp: otpString });
+      const response = await axios.post(`/otpverify`, { phone, otp: otpString });
 
       if (response.status === 200) {
         console.log('OTP verified successfully');

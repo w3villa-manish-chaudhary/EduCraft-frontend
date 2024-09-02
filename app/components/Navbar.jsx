@@ -19,7 +19,7 @@ const CustomNavbar = () => {
   const dropdownRef = useRef(null);
   const handleSignOut = async () => {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/logout`, { withCredentials: true });
+      const response = await axios.get(`/auth/logout`, { withCredentials: true });
       console.log("User Data:::::::::>>>>>>>>", response.data);
   
       if (response.status === 200) {
