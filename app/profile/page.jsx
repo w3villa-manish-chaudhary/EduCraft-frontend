@@ -19,7 +19,7 @@ const Profile = () => {
 
     const getUserData = async () => {
         try {
-            const userResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/profile`, {
+            const userResponse = await axios.get('/user/profile', {
                 headers: {
                     'Authorization': `${localStorage.getItem('token')}`
                 }
@@ -71,7 +71,7 @@ const Profile = () => {
 
     const handleUpdateClick = async () => {
         try {
-            const response = await axios.put(`${process.env.NEXT_PUBLIC_BACKEND_URL}/profile/updateprofile`, updatedUser, {
+            const response = await axios.put(`/profile/updateprofile`, updatedUser, {
                 headers: {
                     'Authorization': `${localStorage.getItem('token')}`,
                     'Content-Type': 'application/json'

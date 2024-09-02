@@ -31,7 +31,7 @@ const AddCourseForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/course/addcourse`, formData);
+      const response = await axios.post(`/course/addcourse`, formData);
       toast.success(response.data.message);
       setFormData({
         course_name: '',

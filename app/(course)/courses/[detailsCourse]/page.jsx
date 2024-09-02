@@ -13,7 +13,7 @@ function DetailsCoures({ params }) {
     // Memoize the function using useCallback
     const fetchCourseById = useCallback(async () => {
         try {
-            const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/course/${uniqueId}`);
+            const response = await axios.get(`/course/${uniqueId}`);
             setCourse(response.data);
         } catch (error) {
             console.error("Error fetching course details:", error);

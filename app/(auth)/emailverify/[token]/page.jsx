@@ -14,7 +14,7 @@ const EmailVerify = ({ params }) => {
   useEffect(() => {
     const verifyEmail = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/emailverify`, {
+        const response = await fetch(`/emailverify`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

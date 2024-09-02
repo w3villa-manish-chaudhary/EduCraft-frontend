@@ -15,7 +15,7 @@ const CheckoutPage = ({ params }) => {
     const fetchCourseData = async () => {
       try {
         const uniqueId = params.courseheckout;
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/course/${uniqueId}`);
+        const response = await axios.get(`/course/${uniqueId}`);
         setCourseData(response.data);
         setLoading(false);
       } catch (err) {
@@ -47,7 +47,7 @@ const CheckoutPage = ({ params }) => {
         "Content-Type": "application/json"
       };
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/course/payments`, {
+      const response = await fetch(`/course/payments`, {
         method: "POST",
         headers: headers,
         body: JSON.stringify(body)

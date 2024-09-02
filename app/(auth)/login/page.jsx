@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/signin`, {
+      const response = await axios.post("/signin", {
         email,
         password
       });
@@ -35,7 +35,7 @@ const Login = () => {
         // Fetch user data
         const getUserData = async () => {
           try {
-            const userResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/profile`, {
+            const userResponse = await axios.get('/user/profile', {
               headers: {
                 'Authorization': `${localStorage.getItem('token')}`
               }
@@ -65,12 +65,12 @@ const Login = () => {
   };
 
   const googleClick = () => {
-    const redirectUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/google`;
+    const redirectUrl = `/auth/google`;
     window.location.href = redirectUrl;
   };
 
   const githubClick = () => {
-    const redirectUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/github`;
+    const redirectUrl = `/auth/github`;
     window.location.href = redirectUrl;
   };
 

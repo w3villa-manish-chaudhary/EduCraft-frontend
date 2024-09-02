@@ -17,7 +17,7 @@ const Page = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/course/showallcourse`,
+        `/course/showallcourse`,
       );
 
       setDetails(response.data.data);

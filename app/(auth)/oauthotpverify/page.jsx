@@ -21,7 +21,7 @@ const OtpVerifyPage = () => {
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/oauthotpsend`, {
+      const response = await fetch(`/auth/oauthotpsend`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
