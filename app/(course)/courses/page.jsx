@@ -6,17 +6,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 
 
+
 const Page = () => {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
+
+
 
   const fetchData = async () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/course/showallcourse`
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/course/showallcourse`,
       );
+
       setDetails(response.data.data);
+      
     } catch (error) {
       console.error("Error fetching course data:", error);
     } finally {

@@ -74,12 +74,12 @@ const CustomNavbar = () => {
         </button>
         <div className={`collapse navbar-collapse justify-content-between ${isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav mx-auto">
+
             <li className="nav-item">
               <Link href="/" legacyBehavior>
                 <a className="nav-link custom-class-navtext">Home</a>
               </Link>
-            </li>
-
+            
             <li className="nav-item">
               <Link href="/courses" legacyBehavior>
                 <a className="nav-link custom-class-navtext">Courses</a>
@@ -90,6 +90,8 @@ const CustomNavbar = () => {
                 <a className="nav-link custom-class-navtext">About</a>
               </Link>
             </li>
+
+
           </ul>
           <ul className="navbar-nav align-items-center">
             {user ? (
