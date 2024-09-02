@@ -3,7 +3,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from '../../Redux/features/counterSlice'
 
-const page = () => {
+const Checkout = () => {
   const count = useSelector((state) => state.counterSlice.value)
   const dispatch = useDispatch()
 
@@ -28,4 +28,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Checkout;

@@ -6,6 +6,9 @@ import { clearUser } from '@/Redux/features/userSlice';
 import './Style/Navbar.css';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import axios from 'axios';
+import Image from 'next/image'; // Import Image from next/image
+
 
 const CustomNavbar = () => {
   const dispatch = useDispatch();
@@ -14,15 +17,12 @@ const CustomNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-
   const handleSignOut = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/logout`, {
-        method: 'GET',
-        credentials: 'include',
-      });
-
-      if (response.ok) {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/logout`, { withCredentials: true });
+      console.log("User Data:::::::::>>>>>>>>", response.data);
+  
+      if (response.status === 200) {
         dispatch(clearUser());
         localStorage.removeItem('token');
         localStorage.removeItem('user');
@@ -55,7 +55,7 @@ const CustomNavbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark custom-class-navbgcolor fixed-top">
       <div className="container">
         <div className="navbar-brand d-flex align-items-center">
-          <img src="/favicon.png" alt="favicon" width="25" height="25" className="mr-2 logo" />
+        <Image src="/favicon.png" alt="favicon" width={25} height={25} className="mr-2 logo" />
           <span>
             <Link href="/" legacyBehavior>
               <a className="custom-class-navtext Logoname">EduCraft</a>

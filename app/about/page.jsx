@@ -14,7 +14,7 @@ const AboutPage = () => {
           and the rapidly evolving needs of the tech industry.
         </p>
         <p>
-          We started with a handful of courses and a small but dedicated team. Today, we're proud to have helped over 100,000 learners 
+          We started with a handful of courses and a small but dedicated team. Today, we&rsquo;re proud to have helped over 100,000 learners 
           from around the world advance their careers in tech.
         </p>
       </section>
@@ -29,7 +29,7 @@ const AboutPage = () => {
           <li>Accessible: Available to anyone, anywhere, at any time</li>
           <li>Practical: Focused on real-world skills that employers value</li>
           <li>Efficient: Designed for rapid learning and immediate application</li>
-          <li>Personalized: Tailored to each learner's unique goals and pace</li>
+          <li>Personalized: Tailored to each learner&rsquo;s unique goals and pace</li>
         </ul>
       </section>
 
@@ -84,7 +84,7 @@ const AboutPage = () => {
       <section className="mb-5">
         <h2>Join Us in Shaping the Future of Tech Education</h2>
         <p>
-          Whether you're just starting your journey in tech or looking to level up your skills, EduCraft is here to support you 
+          Whether you&rsquo;re just starting your journey in tech or looking to level up your skills, EduCraft is here to support you 
           every step of the way. Join our community today and be part of the future of tech education.
         </p>
         <div className="text-center">

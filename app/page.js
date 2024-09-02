@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import PricingSection from '@/app/components/PricingSection';
 import Testimonials from '@/app/components/Testimonials';
 import axios from 'axios';
@@ -10,8 +10,8 @@ import { setUser } from '@/Redux/features/userSlice';
 const HomePage = () => {
   const dispatch = useDispatch();
 
-
-  const getOauthUserData = async () => {
+  // Use useCallback to memoize the function
+  const getOauthUserData = useCallback(async () => {
     try {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login/success`, { withCredentials: true });
       console.log("User Data:::::::::>>>>>>>>", response.data);
@@ -22,11 +22,11 @@ const HomePage = () => {
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     getOauthUserData();
-  }, []);
+  }, [getOauthUserData]);
 
   return (
     <div className='main-container'>
