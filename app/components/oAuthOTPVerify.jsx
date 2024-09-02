@@ -42,7 +42,7 @@ const OauthOtpVerifyPage = ({ phoneNumber: initialPhone }) => {
       if (response.status === 200) {
         toast.success('OTP verified successfully.');
         // Redirect to dashboard
-        window.location.href = '/courses';
+        window.location.href = '/';
       } else {
         setError('OTP verification failed.');
       }
